@@ -1,0 +1,17 @@
+{
+  "name": "dnkdream-blog",
+  "version": "1.0.0",
+  "repository": "https://github.com/kokily/dnkdream-blog",
+  "author": "kokily <kokily@naver.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^5.0.0"
+  },
+  "scripts": {
+    "server": "cd server && yarn start",
+    "client": "cd client && yarn start",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "build": "cd client && yarn build",
+    "production": "cd server && yarn production"
+  }
+}
