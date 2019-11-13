@@ -3,6 +3,8 @@ import Router from 'koa-router';
 import mongoose from 'mongoose';
 import logger from 'koa-morgan';
 import bodyParser from 'koa-body';
+
+// JWT Middleware
 import { jwt_middleware } from './utils';
 
 // Routes
