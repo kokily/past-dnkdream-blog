@@ -20,7 +20,7 @@ export const jwt_middleware = async (ctx, next) => {
     const now = Math.floor(Date.now() / 1000);
 
     if (decoded.exp - now < 60 * 60 * 24 * 1) {
-      const user = await User.findById(id);
+      const user = await User.findById(decoded.id);
       const token = user.generateToken();
 
       ctx.cookies.set('__dnkdream_blog_auth__', token, {

@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const Post = new mongoose.model({
+const Post = new mongoose.Schema({
   title: String,
   body: String,
   tags: [String],
