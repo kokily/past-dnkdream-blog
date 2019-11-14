@@ -68,4 +68,4 @@ const RegisterContainer = ({ history }) => {
   );
 };
 
-export default RegisterContainer;
+export default withRouter(RegisterContainer);
