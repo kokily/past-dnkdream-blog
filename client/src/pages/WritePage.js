@@ -1,15 +1,15 @@
 import React from 'react';
 import WriteTemplate from '../components/write/WriteTemplate';
-import WriteHeader from '../components/write/WriteHeader';
-import WriteBody from '../components/write/WriteBody';
-import WritePreview from '../components/write/WritePreview';
+import WriteHeaderContainer from '../containers/write/WriteHeaderContainer';
+import WriteBodyContainer from '../containers/write/WriteBodyContainer';
+import WritePreviewContainer from '../containers/write/WritePreviewContainer';
 
 const WritePage = () => {
   return (
     <WriteTemplate
-      header={<WriteHeader />}
-      content={<WriteBody />}
-      preview={<WritePreview />}
+      header={<WriteHeaderContainer />}
+      content={<WriteBodyContainer />}
+      preview={<WritePreviewContainer />}
     />
   );
 };
