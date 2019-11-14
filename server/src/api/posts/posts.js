@@ -61,7 +61,7 @@ export const list = async ctx => {
     const postCount = await Post.countDocuments(query).exec();
     const limitBody = post => ({
       ...post,
-      title: post.title.length < 15 ? post.title : `${post.title.slice(0, 15)}...`,
+      title: post.title.length < 20 ? post.title : `${post.title.slice(0, 20)}...`,
       body: post.body.length < 100 ? post.body : `${post.body.slice(0, 100)}...`,
     });
 

@@ -73,7 +73,7 @@ const WriteHeaderContainer = ({ history }) => {
   useEffect(() => {
     if (post) {
       const { _id } = post;
-      history.push(`/post${_id}`);
+      history.push(`/post/${_id}`);
     }
 
     if (postError) {

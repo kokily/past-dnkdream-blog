@@ -20,7 +20,6 @@ const PostCardBlock = styled.div`
   background: white;
   border-radius: 5px;
   ${shadow(2)};
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -31,12 +30,14 @@ const PostCardBlock = styled.div`
     filter: brightness(0.7);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    cursor: pointer;
     &:hover {
       -webkit-filter: brightness(1);
       filter: brightness(1);
     }
   }
   .title {
+    cursor: pointer;
     &:hover {
       color: ${oc.gray[7]};
     }
