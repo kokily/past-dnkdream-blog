@@ -60,6 +60,7 @@ const Avatar = styled.div`
     margin-top: -70px;
     border: 10px solid ${oc.cyan[5]};
     ${shadow(2)};
+    cursor: pointer;
     ${mobile`width: 300px;`};
   }
   @keyframes slideInFromLeft {
@@ -169,13 +170,13 @@ const Skill = styled.div`
   }
 `;
 
-const Intro = ({ img, username, content, skill, onGithub }) => {
+const Intro = ({ img, username, content, skill, onGithub, onLogin }) => {
   return (
     <Container>
       <Circles />
       <div className="detail">
         <Avatar>
-          <img src={img} alt="" />
+          <img src={img} alt="" onClick={onLogin} />
         </Avatar>
         <About>
           <div className="name">

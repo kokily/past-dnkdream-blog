@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import Intro from '../../components/home/Intro';
 
 const introData = {
@@ -8,9 +9,13 @@ const introData = {
   skill: ['Node JS', 'React JS', 'Next JS'],
 };
 
-const IntroContainer = () => {
+const IntroContainer = ({ history }) => {
   const onGithub = () => {
     document.location.href = 'https://github.com/kokily';
+  };
+
+  const onLogin = () => {
+    history.push('/login');
   };
 
   return (
@@ -20,8 +25,9 @@ const IntroContainer = () => {
       content={introData.content}
       skill={introData.skill}
       onGithub={onGithub}
+      onLogin={onLogin}
     />
   );
 };
 
-export default IntroContainer;
+export default withRouter(IntroContainer);
