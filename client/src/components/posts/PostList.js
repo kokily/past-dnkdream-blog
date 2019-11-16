@@ -26,8 +26,8 @@ const PostCardBlock = styled.div`
   img {
     width: 100%;
     height: 180px;
-    -webkit-filter: brightness(0.7);
-    filter: brightness(0.7);
+    -webkit-filter: brightness(0.9);
+    filter: brightness(0.9);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     cursor: pointer;

@@ -2,11 +2,18 @@ import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import oc from 'open-color';
 
-import { shadow } from '../../lib/style';
+import { desktop, shadow } from '../../lib/style';
 import PostModal from './PostModal';
 
 const Container = styled.div`
   margin-top: -1rem;
+  margin-left: auto;
+  margin-right: auto;
+  ${desktop`
+    width: 1200px;
+    padding-left: 15rem;
+    padding-right: 15rem;
+  `}
 `;
 
 const Button = styled.button`

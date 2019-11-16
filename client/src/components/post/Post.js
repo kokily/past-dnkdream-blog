@@ -5,12 +5,20 @@ import { Helmet } from 'react-helmet-async';
 
 import Tags from '../common/Tags';
 import MarkdownRender from '../common/MarkdownRender';
+import { desktop, shadow } from '../../lib/style'
 
 const PostBlock = styled.div`
   margin-top: 4rem;
 `;
 
 const PostHeader = styled.div`
+  ${desktop`
+    width: 1200px;
+    padding-left: 15rem;
+    padding-right: 15rem;
+  `}
+  margin-left: auto;
+  margin-right: auto;
   border-bottom: 1px solid ${oc.gray[4]};
   padding-bottom: 1.5rem;
   margin-bottom: 1.5rem;
@@ -22,8 +30,29 @@ const PostHeader = styled.div`
 `;
 
 const Content = styled.div`
-  font-size: 1.3125rem;
+  margin-left: auto;
+  margin-right: auto;
+  ${desktop`
+    width: 1200px;
+    padding: 2rem 15rem;
+  `}
+  padding: 1rem 1rem;
+  margin-top: 1rem;
+  font-size: 1.125rem;
   color: ${oc.gray[8]};
+  p {
+    line-height: 2rem;
+  }
+  img {
+    ${shadow(1)};
+    margin: 3rem 0;
+    padding: 0.3rem;
+    filter: brightness(0.95);
+    &:hover {
+      ${shadow(2)};
+      filter: brightness(1);
+    }
+  }
 `;
 
 const Post = ({ post, error, loading, PostButton }) => {
@@ -46,12 +75,12 @@ const Post = ({ post, error, loading, PostButton }) => {
       <PostHeader>
         <h1>{title}</h1>
         <Tags tags={tags} />
-        <p>{new Date(createdAt).toLocaleDateString()}</p>
+        <p>{new Date(createdAt).toLocaleDateString()} 작성</p>
       </PostHeader>
 
       {PostButton}
 
-      <Content>
+      <Content className="content">
         <MarkdownRender markdown={body} />
       </Content>
     </PostBlock>
