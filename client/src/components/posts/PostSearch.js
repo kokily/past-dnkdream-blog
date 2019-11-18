@@ -17,6 +17,7 @@ const Form = styled.form`
   overflow: hidden;
   border: 1px solid ${oc.cyan[9]};
   border-radius: 4px;
+  margin-right: 1rem;
   ${shadow(1)};
   ${desktop`width: 450px;`};
   input,

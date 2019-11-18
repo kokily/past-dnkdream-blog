@@ -40,6 +40,9 @@ const Content = styled.div`
   margin-top: 1rem;
   font-size: 1.125rem;
   color: ${oc.gray[8]};
+  h1, h2, h3, h4 {
+    margin-top: 3rem;
+  }
   p {
     line-height: 2rem;
   }

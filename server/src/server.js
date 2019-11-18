@@ -11,7 +11,7 @@ const rootDir = path.resolve(__dirname, '../../client/build');
 
 app.use(serve(rootDir));
 app.use(async ctx => {
-  if (ctx.status === 409 && ctx.path.indexOf('/api') !== 0) {
+  if (ctx.status === 404 && ctx.path.indexOf('/api') !== 0) {
     await send(ctx, 'index.html', { root: rootDir });
   }
 });

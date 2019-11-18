@@ -39,8 +39,8 @@ const WriteHeaderContainer = ({ history }) => {
         .post('/api/upload', formData)
         .then(res => {
           const oldBody = body;
-          const newBody = `${oldBody}![image](/uploads/${res.data})`;
-          let newThumbnail = `/uploads/${res.data}`;
+          const newBody = `${oldBody}![image](/api/upload/${res.data})`;
+          let newThumbnail = `/api/upload/${res.data}`;
 
           if (!thumbnail) {
             dispatch(changeField({ key: 'thumbnail', value: newThumbnail }));

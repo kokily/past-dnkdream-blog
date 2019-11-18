@@ -148,7 +148,7 @@ const AuthForm = ({ mode, form, onSubmit, onChange, error }) => {
       <Button htmlType="submit">{text}</Button>
       <RightMenu>
         {mode === 'login' ? (
-          <LinkButton to="/register">회원가입</LinkButton>
+          <></>
         ) : (
           <LinkButton to="/login">로그인</LinkButton>
         )}

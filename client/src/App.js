@@ -16,7 +16,6 @@ const App = () => {
       </Helmet>
       <Route exact path="/" component={HomePage} />
       <Route path="/login" component={LoginPage} />
-      <Route path="/register" component={RegisterPage} />
       <Route path="/posts" component={PostListPage} />
       <Route path="/post/:postId" component={PostPage} />
       <Route path="/write" component={WritePage} />
