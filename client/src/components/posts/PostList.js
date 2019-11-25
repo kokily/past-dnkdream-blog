@@ -23,7 +23,7 @@ const PostCardBlock = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  img {
+  .card {
     width: 100%;
     height: 180px;
     -webkit-filter: brightness(0.9);
@@ -44,20 +44,49 @@ const PostCardBlock = styled.div`
   }
 `;
 
+const Avatar = styled.div`
+  width: 78px;
+  height: 78px;
+  z-index: 9;
+  position: relative;
+  top: -45px;
+  left: 10px;
+  right: 0px;
+  border: 4px solid #fff;
+  
+  background: #000;
+  background-size: cover;
+  border-radius: 50%;
+
+  .avatar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 50%;
+    ${shadow(1)};
+  }
+`;
+
 const Content = styled.div`
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
+  display: inline-block;
   .title {
+    position: relative;
     font-size: 1.25rem;
     font-weight: 600;
     color: ${oc.gray[9]};
+    top: -48px;
   }
   .text {
-    flex: 1 1 auto;
+    position: relative;
     font-size: 0.875rem;
-    line-height: 1.5;
+    line-height: 1.4;
+    top: -48px;
+    margin-bottom: -2rem;
   }
 `;
 
@@ -65,16 +94,19 @@ const PostItem = ({ post, onPost }) => {
   return (
     <PostCardBlock>
       {post.thumbnail ? (
-        <img src={`${post.thumbnail}`} alt="" onClick={() => onPost(post._id)} />
-      ) : (
-        <img src="/images/bg.png" alt="" onClick={() => onPost(post._id)} />
+        <img src={`${post.thumbnail}`} className="card" alt="" onClick={() => onPost(post._id)} />
+      ):(
+        <img src="/images/bg.png" className="card" alt="" onClick={() => onPost(post._id)} />
       )}
+      <Avatar>
+        <img src="/images/profile.jpg" className="avatar" alt="" />
+      </Avatar>
       <Content>
         <div className="title" onClick={() => onPost(post._id)}>
           {post.title}
         </div>
         <p className="text">{removeMd(post.body)}</p>
-        <Tags tags={post.tags} />
+        <Tags tags={post.tags} className="tags" />
         <p className="date">{new Date(post.createdAt).toLocaleDateString()}</p>
       </Content>
     </PostCardBlock>

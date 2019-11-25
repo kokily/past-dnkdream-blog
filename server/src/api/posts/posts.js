@@ -61,8 +61,8 @@ export const list = async ctx => {
     const postCount = await Post.countDocuments(query).exec();
     const limitBody = post => ({
       ...post,
-      title: post.title.length < 20 ? post.title : `${post.title.slice(0, 20)}...`,
-      body: post.body.length < 100 ? post.body : `${post.body.slice(0, 100)}...`,
+      title: post.title.length < 26 ? post.title : `${post.title.slice(0, 26)}...`,
+      body: post.body.length < 200 ? post.body : `${post.body.slice(0, 200)}...`,
     });
 
     ctx.set('Last-Page', Math.ceil(postCount / 8));
