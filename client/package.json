@@ -7,7 +7,7 @@
     "codemirror": "^5.49.2",
     "immer": "^5.0.0",
     "marked": "^0.7.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "open-color": "^1.7.0",
     "prismjs": "^1.17.1",
     "qs": "^6.9.1",
